@@ -16,5 +16,5 @@ public class Main {
 		main.setAccessible(true); // private인 main()을 호출 가능하게 한다.
 		
 		main.invoke(hello); // hello.main()
-	}
+ 	}
 }
