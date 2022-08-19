@@ -7,7 +7,7 @@ import java.util.StringJoiner;
 public class MethodInfo {
 	public static void main(String[] args) throws Exception{
 
-		Class clazz = Class.forName("com.fastcampus.ch2.YoilTeller");
+		Class clazz = Class.forName("com.fastcampus.ch2.YoilTellerMVC");
 		Object obj = clazz.newInstance();
 		
 		Method[] methodArr = clazz.getDeclaredMethods();
