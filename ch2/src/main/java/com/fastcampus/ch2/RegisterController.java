@@ -18,11 +18,14 @@ public class RegisterController {
 	
 //	@RequestMapping(value="/register/save", method=RequestMethod.POST)
 	@PostMapping("/register/save")
-	public String save(User user, Model model) throws Exception {
+	public String save(User user, Model m) throws Exception {
 		// 1. 유효성 검사
 		if(!isValid(user)) {
 			String msg = URLEncoder.encode("id를 잘못 입력하셨습니다.", "utf-8");
-			return "redirect:/register/add?msg="+msg; // URL재작성(rewriting)
+			
+			m.addAttribute("msg", msg);
+			return "redirect:/register/add";
+//			return "redirect:/register/add?msg="+msg; // URL재작성(rewriting)
 		}
 		
 		// 2. DB에 신규회원 정보를 저장
@@ -30,7 +33,7 @@ public class RegisterController {
 	}
 	
 	private boolean isValid(User user) {
-		return false;
+		return true;
 	}
 	
 	
