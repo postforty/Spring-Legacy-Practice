@@ -9,4 +9,9 @@ public class RegisterController {
 	public String register() {
 		return "registerForm";
 	}
+	
+	@RequestMapping("/register/save")
+	public String save() {
+		return "registerInfo";
+	}
 }

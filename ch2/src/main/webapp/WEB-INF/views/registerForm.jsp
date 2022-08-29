@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=utf-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,11 +68,11 @@
     <title>Register</title>
 </head>
 <body>
-   <form action="/ch2/registerInfo.jsp" method="POST" onsubmit="return formCheck(this)">
+   <form action="<c:url value="/register/save"/>" method="POST" onsubmit="return formCheck(this)">
     <div class="title">Register</div>
     <div id="msg" class="msg"> </div> 
     <label for="">아이디</label>
-    <input class="input-field" type="text" name="id" placeholder="8~12자리의 영대소문자와 숫자 조합" autofocus>
+    <input class="input-field" type="text" name="id" placeholder="8~12자리의 영대소문자와 숫자 조합">
     <label for="">비밀번호</label>
     <input class="input-field" type="text" name="pwd" placeholder="8~12자리의 영대소문자와 숫자 조합">
     <label for="">이름</label>
@@ -94,7 +96,6 @@
                 setMessage('id의 길이는 3이상이어야 합니다.', frm.id);
                 return false;
             }
-            
             if(frm.pwd.value.length<3) {
                 setMessage('pwd의 길이는 3이상이어야 합니다.', frm.pwd);
                 return false;
@@ -104,7 +105,7 @@
        }
 
        function setMessage(msg, element){
-            document.getElementById("msg").innerHTML = `<i class="fa fa-exclamation-circle"> ${msg}</i>`;
+            document.getElementById("msg").innerHTML = `<i class="fa fa-exclamation-circle"> ${'${msg}'}</i>`;
 
             if(element) {
                 element.select();
