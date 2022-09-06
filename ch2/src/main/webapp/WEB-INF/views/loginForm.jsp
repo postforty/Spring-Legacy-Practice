@@ -66,6 +66,7 @@
 	</div>
         <input type="text" name="id" value="${cookie.id.value}" placeholder="이메일 입력" autofocus>
         <input type="password" name="pwd" placeholder="비밀번호">
+        <input type="hidden" name="toURL" value="${param.toURL}">
         <button>로그인</button>
         <div>
             <label><input type="checkbox" name="rememberId" ${empty cookie.id.value ? "" : "checked"}> 아이디 기억</label> |
