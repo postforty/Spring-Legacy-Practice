@@ -3,6 +3,7 @@ package com.fastcampus.ch2;
 import java.io.FileNotFoundException;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 //import org.springframework.ui.Model;
 //import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +25,8 @@ public class ExceptionController {
 	
 	// GlobalCatcher.java에서 처리
 	@RequestMapping("/ex")
-	public String main() throws Exception {
+	public String main(Model m) throws Exception {
+		m.addAttribute("msg", "message from ExceptionController.main()");
 		throw new Exception("예외가 발생했습니다.");
 	}
 	
