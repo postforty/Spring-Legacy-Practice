@@ -15,9 +15,16 @@ public class GlobalCatcher {
 			m.addAttribute("ex", ex);
 			return "error";
 		}
+//		@ExceptionHandler(Exception.class)
+//		public String catcher(Exception ex, Model m) {
+//			m.addAttribute("ex", ex);
+//			return "error";
+//		}
 		@ExceptionHandler(Exception.class)
 		public String catcher(Exception ex, Model m) {
-			m.addAttribute("ex", ex);
+			System.out.println("catcher() in ExceptionController");
+			System.out.println("m="+m);
+//			m.addAttribute("ex", ex);
 			return "error";
 		}
 }
