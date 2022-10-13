@@ -35,9 +35,9 @@ public class ExceptionController {
 		throw new NullPointerException("예외가 발생했습니다.");
 	}
 	
-	@RequestMapping("/ex3")
-	public String main3() throws Exception {
-		throw new FileNotFoundException("예외가 발생했습니다.");
-	}
+//	@RequestMapping("/ex3")
+//	public String main3() throws Exception {
+//		throw new FileNotFoundException("예외가 발생했습니다.");
+//	}
 
 }
